@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Fresh Produce - FarmconnectKE</title>
+    <link rel="stylesheet" href="shop-style.css">
+    <link rel="stylesheet" href="shop.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>FarmconnectKE</h2>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="shop.html" class="nav-link active">Shop Fresh Produce</a>
+                <a href="farmer-signup.html" class="nav-link">Become a Farmer</a>
+                <a href="#" class="nav-link">About Us</a>
+                <a href="#" class="nav-link">Contact</a>
+                <div class="nav-icons">
+                    <div class="search-box">
+                        <input type="text" placeholder="Search products..." id="searchInput">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <a href="#" class="nav-icon cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count">0</span>
+                    </a>
+                    <a href="#" class="nav-icon"><i class="fas fa-user"></i></a>
+                </div>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Shop Header -->
+    <section class="shop-header">
+        <div class="container">
+            <h1>Fresh Produce Market</h1>
+            <p>Direct from Kenyan farms to your table</p>
+        </div>
+    </section>
+
+    <!-- Shop Content -->
+    <section class="shop-main">
+        <div class="container">
+            <div class="shop-layout">
+                <!-- Filters Sidebar -->
+                <aside class="filters-sidebar">
+                    <div class="filter-group">
+                        <h3>Categories</h3>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" value="vegetables"> Vegetables
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="fruits"> Fruits
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="grains"> Grains & Cereals
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="dairy"> Dairy & Eggs
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="herbs"> Herbs & Spices
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3>Farming Practice</h3>
+                        <div class="filter-options">
+                            <label class="filter-option">
+                                <input type="checkbox" value="organic"> Organic
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="sustainable"> Sustainable
+                            </label>
+                            <label class="filter-option">
+                                <input type="checkbox" value="pesticide-free"> Pesticide-Free
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3>Price Range</h3>
+                        <div class="price-range">
+                            <input type="range" min="0" max="1000" value="500" class="price-slider">
+                            <div class="price-values">
+                                <span>KSh 0</span>
+                                <span>KSh 1000</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3>Farm Location</h3>
+                        <select class="location-select">
+                            <option value="">All Counties</option>
+                            <option value="nairobi">Nairobi</option>
+                            <option value="kiambu">Kiambu</option>
+                            <option value="muranga">Murang'a</option>
+                            <option value="nyeri">Nyeri</option>
+                        </select>
+                    </div>
+                </aside>
+
+                <!-- Products Grid -->
+                <main class="products-grid">
+                    <div class="products-header">
+                        <div class="results-count">Showing 12 products</div>
+                        <div class="sort-options">
+                            <select id="sortSelect">
+                                <option value="featured">Featured</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="name">Name A-Z</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="products-container" id="productsContainer">
+                        <!-- Products will be loaded here by JavaScript -->
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be loaded here -->
+        </div>
+        <div class="cart-total">
+            <p>Total: KSh <span id="cartTotal">0</span></p>
+            <button class="btn btn-primary checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>FarmconnectKE</h3>
+                    <p>Connecting Kenyan farmers directly with consumers for fresh, sustainable produce.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="shop.html">Shop Produce</a>
+                    <a href="farmer-signup.html">Sell With Us</a>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-phone"></i> +254 700 123 456</p>
+                    <p><i class="fas fa-envelope"></i> info@farmconnectke.co.ke</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 FarmconnectKE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/shop.js"></script>
+</body>
+</html>
